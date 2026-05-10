@@ -38,7 +38,11 @@ app.get('/read', async (req,res)=>
  let readed = await userSchema.find();
  res.send(readed);
 });
-
+app.get('/delete', async (req,res)=>
+{
+ let readed = await userSchema.findOneAndDelete({username:'Ahtsham'});
+ res.send(readed);
+});
 
 
 // SERVER
