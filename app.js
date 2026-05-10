@@ -33,6 +33,12 @@ app.get("/update", async (req, res) => {
     res.send(updateduser);
 });
 
+app.get('/read', async (req,res)=>
+{
+ let readed = await userSchema.find();
+ res.send(readed);
+});
+
 
 
 // SERVER
