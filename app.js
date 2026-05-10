@@ -19,6 +19,22 @@ app.get("/create", async (req, res) => {
     res.send(createdUser);
 });
 
+
+// UPDATE
+app.get("/update", async (req, res) => {
+    let updateduser = await userSchema.findOneAndUpdate(
+        { username: "Ahtsham" },
+        { username: "Sham" },
+        { new: true }
+    );
+
+    
+
+    res.send(updateduser);
+});
+
+
+
 // SERVER
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
